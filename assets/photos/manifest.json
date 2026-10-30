@@ -21,7 +21,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1759299983523-d883f6ecf097",
    "unsplash_id": "J24R8RLPj1A",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-song-bien/01-ban-cong-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/phong-song-bien/02-phong-ngu.jpg",
@@ -42,7 +45,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1779870458288-95fd59cd2c5b",
    "unsplash_id": "uXYHodDhiG4",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-song-bien/02-phong-ngu-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/phong-song-bien/03-noi-that.jpg",
@@ -63,7 +69,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1609602126247-4ab7188b4aa1",
    "unsplash_id": "56WKMCORs-0",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-song-bien/03-noi-that-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/phong-song-bien/04-chi-tiet.jpg",
@@ -84,7 +93,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1776761603930-e4509e386fbf",
    "unsplash_id": "R1NdTGhd9eM",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-song-bien/04-chi-tiet-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/phong-song-bien/05-phong-tam.jpg",
@@ -105,7 +117,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1630699376517-7d0ac3d33cc4",
    "unsplash_id": "hWGlQlfoEr0",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-song-bien/05-phong-tam-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/phong-song-bien/06-view.jpg",
@@ -126,7 +141,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1790360053422-19f29d4adf89",
    "unsplash_id": "Js_c8Rp7kbU",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-song-bien/06-view-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/bungalow-dua/01-ngoai-that.jpg",
@@ -147,7 +165,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1771526087519-ae6e37449c20",
    "unsplash_id": "q4uMm_ltRsc",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/bungalow-dua/01-ngoai-that-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/bungalow-dua/02-hien-vong.jpg",
@@ -168,7 +189,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1712115260501-57e3e01f89f4",
    "unsplash_id": "RYqW99OXHRY",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/bungalow-dua/02-hien-vong-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/bungalow-dua/03-phong-ngu.jpg",
@@ -189,7 +213,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1774280954999-9758f11f3d41",
    "unsplash_id": "RAXD1BlJmSs",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/bungalow-dua/03-phong-ngu-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/bungalow-dua/04-phong-tam.jpg",
@@ -210,7 +237,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1730415120427-7c826d526e7f",
    "unsplash_id": "FJPYsKHNEbI",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/bungalow-dua/04-phong-tam-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/bungalow-dua/05-view.jpg",
@@ -231,7 +261,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1584132869994-873f9363a562",
    "unsplash_id": "G6eXUCi8JgA",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/bungalow-dua/05-view-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/bungalow-dua/06-chi-tiet.jpg",
@@ -252,7 +285,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1771526087650-6c755f4e5639",
    "unsplash_id": "KfByZ_0Fwds",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/bungalow-dua/06-chi-tiet-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/can-doi-thong/01-ngoai-that.jpg",
@@ -273,7 +309,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1725304578757-7fed2a612431",
    "unsplash_id": "tVnItCkcGDE",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/can-doi-thong/01-ngoai-that-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/can-doi-thong/02-phong-khach.jpg",
@@ -294,7 +333,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1664369058082-ee8e36028106",
    "unsplash_id": "DNt5A4T0-Rs",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/can-doi-thong/02-phong-khach-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/can-doi-thong/03-bep.jpg",
@@ -315,7 +357,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1761656630581-69a58e4e1c09",
    "unsplash_id": "htmZWzApbJE",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/can-doi-thong/03-bep-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/can-doi-thong/04-phong-ngu.jpg",
@@ -336,7 +381,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1727706572437-4fcda0cbd66f",
    "unsplash_id": "rP0OTFdVaak",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/can-doi-thong/04-phong-ngu-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/can-doi-thong/05-phong-ngu-2.jpg",
@@ -357,7 +405,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1680703261560-11c234762abe",
    "unsplash_id": "eNJUZM12TlY",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/can-doi-thong/05-phong-ngu-2-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/can-doi-thong/06-phong-tam.jpg",
@@ -378,7 +429,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1613849925594-415a32298f54",
    "unsplash_id": "RMnc22CwVVA",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/can-doi-thong/06-phong-tam-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/can-doi-thong/07-chi-tiet.jpg",
@@ -399,7 +453,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1664361238207-164532d1934e",
    "unsplash_id": "DuzoUrpdhUA",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/can-doi-thong/07-chi-tiet-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/phong-gac-mai/01-phong-ngu.jpg",
@@ -420,7 +477,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1740446569579-ae9428f362b2",
    "unsplash_id": "B78dzhmZA_o",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-gac-mai/01-phong-ngu-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/phong-gac-mai/02-chi-tiet.jpg",
@@ -441,7 +501,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1740446568302-0eca27e820b5",
    "unsplash_id": "d7zpGLglvtE",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-gac-mai/02-chi-tiet-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/phong-gac-mai/03-noi-that.jpg",
@@ -462,7 +525,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1740446568940-eab487395d3d",
    "unsplash_id": "lrbEs5Z5n7A",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-gac-mai/03-noi-that-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/phong-gac-mai/04-noi-that-2.jpg",
@@ -483,7 +549,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1740446568651-1d31966b228a",
    "unsplash_id": "B2f-c_udNgM",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-gac-mai/04-noi-that-2-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/phong-gac-mai/05-phong-tam.jpg",
@@ -504,7 +573,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1613849925383-fab6d1d1353b",
    "unsplash_id": "n885FXAq1Bo",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-gac-mai/05-phong-tam-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/phong-gac-mai/06-view.jpg",
@@ -525,7 +597,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1551120738-c3fcea8d0cf8",
    "unsplash_id": "uWJo5rEhvo4",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-gac-mai/06-view-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/phong-gia-dinh-hoa-giay/01-phong-ngu.jpg",
@@ -546,7 +621,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1737517302831-e7b8a8eaa97c",
    "unsplash_id": "4eUol_FVp3o",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-gia-dinh-hoa-giay/01-phong-ngu-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/phong-gia-dinh-hoa-giay/02-phong-ngu-2.jpg",
@@ -567,7 +645,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1741506131058-533fcf894483",
    "unsplash_id": "4MQ0T4zBIys",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-gia-dinh-hoa-giay/02-phong-ngu-2-md.jpg",
+   "md_width": 960,
+   "md_height": 720
   },
   {
    "path": "assets/photos/phong-gia-dinh-hoa-giay/03-noi-that.jpg",
@@ -588,7 +669,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1771775529138-a7a20ba7e032",
    "unsplash_id": "jbwrqHBZPUY",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-gia-dinh-hoa-giay/03-noi-that-md.jpg",
+   "md_width": 960,
+   "md_height": 641
   },
   {
    "path": "assets/photos/phong-gia-dinh-hoa-giay/04-ban-cong.jpg",
@@ -609,7 +693,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1779709963291-dcd523d32f58",
    "unsplash_id": "FJguGdLRh_g",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-gia-dinh-hoa-giay/04-ban-cong-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/phong-gia-dinh-hoa-giay/05-chi-tiet.jpg",
@@ -630,7 +717,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1779709963452-8c79c3f7591a",
    "unsplash_id": "ijdI1T9bWrk",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-gia-dinh-hoa-giay/05-chi-tiet-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/phong-gia-dinh-hoa-giay/06-phong-tam.jpg",
@@ -651,7 +741,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1623111771732-6eadcf47b60b",
    "unsplash_id": "dNjW6UWwLHA",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/phong-gia-dinh-hoa-giay/06-phong-tam-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/studio-ghenh-rang/01-phong-ngu.jpg",
@@ -672,7 +765,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1787507470186-deb4523d46cb",
    "unsplash_id": "YDLDyqibZmU",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/studio-ghenh-rang/01-phong-ngu-md.jpg",
+   "md_width": 960,
+   "md_height": 541
   },
   {
    "path": "assets/photos/studio-ghenh-rang/02-bep.jpg",
@@ -693,7 +789,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1702014861373-527115231f8c",
    "unsplash_id": "KUG5LLnuTbo",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/studio-ghenh-rang/02-bep-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/studio-ghenh-rang/03-ban-lam-viec.jpg",
@@ -714,7 +813,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1653463174231-3911539cfdd9",
    "unsplash_id": "2pia6OAe5rA",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/studio-ghenh-rang/03-ban-lam-viec-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/studio-ghenh-rang/04-may-giat.jpg",
@@ -735,7 +837,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1772476361208-27d580dd3328",
    "unsplash_id": "kyfvku_y1T0",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/studio-ghenh-rang/04-may-giat-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/studio-ghenh-rang/05-view.jpg",
@@ -756,7 +861,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1603030595909-bd702543c190",
    "unsplash_id": "urHG5oALQp4",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/studio-ghenh-rang/05-view-md.jpg",
+   "md_width": 960,
+   "md_height": 642
   },
   {
    "path": "assets/photos/studio-ghenh-rang/06-view-2.jpg",
@@ -777,7 +885,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1671891775117-43b0207ac5c7",
    "unsplash_id": "Xi3cx0j-wds",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/studio-ghenh-rang/06-view-2-md.jpg",
+   "md_width": 960,
+   "md_height": 720
   },
   {
    "path": "assets/photos/villa-ho-boi-eo-gio/01-ho-boi.jpg",
@@ -798,7 +909,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1721989518229-3e84837fc398",
    "unsplash_id": "IPusH_J_C3I",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/villa-ho-boi-eo-gio/01-ho-boi-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/villa-ho-boi-eo-gio/02-san-hien.jpg",
@@ -819,7 +933,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1721989519334-40923a0ee1c0",
    "unsplash_id": "ksa5r_xt8cg",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/villa-ho-boi-eo-gio/02-san-hien-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/villa-ho-boi-eo-gio/03-phong-ngu.jpg",
@@ -840,7 +957,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1721222201438-b59e2bbca679",
    "unsplash_id": "MfszyXO1sM0",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/villa-ho-boi-eo-gio/03-phong-ngu-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/villa-ho-boi-eo-gio/04-phong-khach.jpg",
@@ -861,7 +981,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1721989516956-a9b06801038f",
    "unsplash_id": "HtolmWUCFN8",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/villa-ho-boi-eo-gio/04-phong-khach-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/villa-ho-boi-eo-gio/05-phong-khach-2.jpg",
@@ -882,7 +1005,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1721222203452-29aee6b651ac",
    "unsplash_id": "vU0MP0R6Nd0",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/villa-ho-boi-eo-gio/05-phong-khach-2-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/villa-ho-boi-eo-gio/06-bep.jpg",
@@ -903,7 +1029,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1713192707550-8748c992fc7c",
    "unsplash_id": "aZegRZ-r4XI",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/villa-ho-boi-eo-gio/06-bep-md.jpg",
+   "md_width": 960,
+   "md_height": 637
   },
   {
    "path": "assets/photos/villa-ho-boi-eo-gio/07-phong-tam.jpg",
@@ -924,7 +1053,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd",
    "unsplash_id": "PibraWHb4h8",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/villa-ho-boi-eo-gio/07-phong-tam-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/hero/01-toan-canh.jpg",
@@ -945,7 +1077,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1565503261152-b42ab6c1a925",
    "unsplash_id": "Xhen2-WcO9I",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/hero/01-toan-canh-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/tien-ich/01-ho-boi.jpg",
@@ -966,7 +1101,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd",
    "unsplash_id": "qai_Clhyq0s",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/tien-ich/01-ho-boi-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/tien-ich/02-bua-sang.jpg",
@@ -987,7 +1125,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1728051104003-aa16971b44b3",
    "unsplash_id": "DnZiQ0hSk6M",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/tien-ich/02-bua-sang-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/tien-ich/03-spa.jpg",
@@ -1008,7 +1149,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1595871151608-bc7abd1caca3",
    "unsplash_id": "6xlyKFFvufg",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/tien-ich/03-spa-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/tien-ich/04-le-tan.jpg",
@@ -1029,7 +1173,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1759038085950-1234ca8f5fed",
    "unsplash_id": "kfnWOD1Tbp8",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/tien-ich/04-le-tan-md.jpg",
+   "md_width": 960,
+   "md_height": 720
   },
   {
    "path": "assets/photos/tien-ich/05-sanh.jpg",
@@ -1050,7 +1197,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1758448500688-3ababa93fd67",
    "unsplash_id": "pt0nGH-NvoA",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/tien-ich/05-sanh-md.jpg",
+   "md_width": 960,
+   "md_height": 540
   },
   {
    "path": "assets/photos/tien-ich/06-xe-dap.jpg",
@@ -1071,7 +1221,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1494375364506-901512970ad4",
    "unsplash_id": "IlR3M0BMrWQ",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/tien-ich/06-xe-dap-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/tien-ich/07-bbq.jpg",
@@ -1092,7 +1245,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1680206893968-01fe5583f6b5",
    "unsplash_id": "-1PvWdUQSLA",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/tien-ich/07-bbq-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/tien-ich/08-giat-ui.jpg",
@@ -1113,7 +1269,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c",
    "unsplash_id": "23coWmkTNSg",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/tien-ich/08-giat-ui-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/tien-ich/09-san-choi.jpg",
@@ -1134,7 +1293,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1777626759287-1b0980543104",
    "unsplash_id": "maeiJ4YI93c",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/tien-ich/09-san-choi-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/vi-tri/01-bai-bien.jpg",
@@ -1155,7 +1317,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1522034477175-d97f456a4873",
    "unsplash_id": "oP6DZnDmrok",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/vi-tri/01-bai-bien-md.jpg",
+   "md_width": 960,
+   "md_height": 720
   },
   {
    "path": "assets/photos/vi-tri/02-lang-chai.jpg",
@@ -1176,7 +1341,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1774434355015-bb547e11b32c",
    "unsplash_id": "I4uJHWtSR1U",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/vi-tri/02-lang-chai-md.jpg",
+   "md_width": 960,
+   "md_height": 540
   },
   {
    "path": "assets/photos/vi-tri/03-cho-hai-san.jpg",
@@ -1197,7 +1365,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1746362723195-c42946f3633b",
    "unsplash_id": "zNsXLClT73o",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/vi-tri/03-cho-hai-san-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/vi-tri/04-doi-thong.jpg",
@@ -1218,7 +1389,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1770181305908-536f70920db6",
    "unsplash_id": "m1FTyDPku7Y",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/vi-tri/04-doi-thong-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/vi-tri/05-bo-bien.jpg",
@@ -1239,7 +1413,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1687025846473-9bd391575faa",
    "unsplash_id": "9sHHKZBnp4Q",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/vi-tri/05-bo-bien-md.jpg",
+   "md_width": 960,
+   "md_height": 590
   },
   {
    "path": "assets/photos/uu-dai/01-o-3-dem.jpg",
@@ -1260,7 +1437,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1630809718582-2bc0a1b7b296",
    "unsplash_id": "McTs3-iLuMY",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/uu-dai/01-o-3-dem-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/uu-dai/02-dat-som.jpg",
@@ -1281,7 +1461,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1671014594641-262cc4b9a16d",
    "unsplash_id": "RFKpgayllWQ",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/uu-dai/02-dat-som-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/uu-dai/03-gia-dinh.jpg",
@@ -1302,7 +1485,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1628689469838-524a4a973b8e",
    "unsplash_id": "B77ypBmpYuw",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/uu-dai/03-gia-dinh-md.jpg",
+   "md_width": 960,
+   "md_height": 640
   },
   {
    "path": "assets/photos/uu-dai/04-lam-viec.jpg",
@@ -1323,7 +1509,10 @@
    "license_url": "https://unsplash.com/license",
    "download_url": "https://images.unsplash.com/photo-1593642634315-48f5414c3ad9",
    "unsplash_id": "8pb7Hq539Zw",
-   "downloaded": "2026-10-30"
+   "downloaded": "2026-10-30",
+   "md": "assets/photos/uu-dai/04-lam-viec-md.jpg",
+   "md_width": 960,
+   "md_height": 641
   }
  ]
 }

@@ -18,14 +18,38 @@ PH=json.load(open(os.path.join(ROOT,'assets/photos/manifest.json'),encoding='utf
 def P(sec): return [x for x in PH if x['section']==sec]
 def img(x,p,sizes='(max-width:760px) 100vw, 50vw',eager=False):
     lz='fetchpriority="high"' if eager else 'loading="lazy" decoding="async"'
-    return f'<img src="{p}{x["path"]}" srcset="{p}{x["thumb"]} {x["thumb_width"]}w, {p}{x["path"]} {x["width"]}w" sizes="{sizes}" width="{x["width"]}" height="{x["height"]}" alt="{E(x["alt_vi"])}" {lz}>'
+    return f'<img src="{p}{x["path"]}" srcset="{p}{x["thumb"]} {x["thumb_width"]}w, {p}{x["md"]} {x["md_width"]}w, {p}{x["path"]} {x["width"]}w" sizes="{sizes}" width="{x["width"]}" height="{x["height"]}" alt="{E(x["alt_vi"])}" {lz}>'
 def photo(x,p,cls='',sizes='(max-width:760px) 100vw, 33vw',eager=False):
     return f'<div class="art photo {cls}">{img(x,p,sizes,eager)}</div>'
 def lbattrs(x,p,cap):
     return f'data-lb data-src="{p}{x["path"]}" data-alt="{E(x["alt_vi"])}" data-cap="{E(cap)} · Ảnh: {E(x["photographer"])} / Unsplash"'
 COVER={'phong-song-bien':2,'bungalow-dua':0,'can-doi-thong':1,'phong-gac-mai':0,'phong-gia-dinh-hoa-giay':0,'studio-ghenh-rang':0,'villa-ho-boi-eo-gio':0}
+_h=P('hero')[0]
+HERO_PRELOAD=f'\n<link rel="preload" as="image" href="{_h["path"]}" imagesrcset="{_h["thumb"]} {_h["thumb_width"]}w, {_h["md"]} {_h["md_width"]}w, {_h["path"]} {_h["width"]}w" imagesizes="100vw" fetchpriority="high">'
 money=lambda n: f"{n:,}".replace(',', '.')+'₫'
 NAV=[('index.html','Trang chủ'),('phong/index.html','Loại phòng'),('tien-ich.html','Tiện ích'),('thu-vien-anh.html','Thư viện ảnh'),('uu-dai.html','Ưu đãi'),('danh-gia.html','Đánh giá'),('lien-he.html','Liên hệ')]
+
+
+INTRO_GATE="try{if(!sessionStorage.getItem('nhagio_intro_seen')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('intro-on');sessionStorage.setItem('nhagio_intro_seen','1')}}catch(e){}"
+INTRO_HTML='''<div class="intro" id="intro" role="dialog" aria-label="Lời chào Nhà Gió (có thể bỏ qua)">
+<div class="intro-sky" aria-hidden="true"></div>
+<svg class="intro-wind" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+<path class="w w1" d="M-40 260 C 200 200, 360 320, 600 250 S 980 190, 1240 260"/>
+<path class="w w2" d="M-40 360 C 240 300, 420 420, 700 350 S 1020 300, 1240 380"/>
+<path class="w w3" d="M-40 470 C 180 430, 380 520, 640 460 S 960 410, 1240 470"/>
+<path class="w w4" d="M-40 560 C 260 520, 480 610, 760 540 S 1040 500, 1240 570"/>
+<path class="w w5" d="M120 200 C 300 160, 420 230, 560 200 q 60 -14 50 -50 q -10 -30 -40 -20"/>
+</svg>
+<div class="intro-cloud c1" aria-hidden="true"></div><div class="intro-cloud c2" aria-hidden="true"></div>
+<svg class="leaf l1" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 12 C 10 0, 30 0, 38 12 C 30 24, 10 24, 2 12z M2 12 H38" /></svg>
+<svg class="leaf l2" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 12 C 10 0, 30 0, 38 12 C 30 24, 10 24, 2 12z M2 12 H38" /></svg>
+<svg class="leaf l3" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 12 C 10 0, 30 0, 38 12 C 30 24, 10 24, 2 12z M2 12 H38" /></svg>
+<svg class="leaf l4" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 12 C 10 0, 30 0, 38 12 C 30 24, 10 24, 2 12z M2 12 H38" /></svg>
+<svg class="leaf l5" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 12 C 10 0, 30 0, 38 12 C 30 24, 10 24, 2 12z M2 12 H38" /></svg>
+<div class="intro-txt"><p class="intro-name">Nhà Gió</p><p class="intro-tag">Nơi gió biển gặp đồi thông · bản demo</p></div>
+<button type="button" class="intro-skip" id="introSkip">Bỏ qua</button>
+</div>
+'''
 
 def art(kind,pal,label,cls='',tag=True):
     return f'<div class="art {cls}" data-art="{kind}" data-pal="{pal}" data-label="{E(label)} (ảnh minh họa)">{"<span class=tag aria-hidden=true>Minh họa</span>" if tag else ""}</div>'
@@ -47,9 +71,10 @@ def page(path,title,desc,body,current=None,jsonld=None,extra_head=''):
 <meta name="theme-color" content="#b5472c">
 <link rel="icon" href="{p}assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="{p}assets/site.css">{extra_head}
+<script>(function(d){{d.classList.add('js');{INTRO_GATE if path=='index.html' else ''}}})(document.documentElement)</script>{HERO_PRELOAD if path=='index.html' else ''}
 <script type="application/ld+json">{json.dumps(ld if len(ld)>1 else ld[0],ensure_ascii=False)}</script>
 </head><body>
-<a class="skip" href="#main">Bỏ qua, đến nội dung chính</a>
+{INTRO_HTML if path=='index.html' else ''}<a class="skip" href="#main">Bỏ qua, đến nội dung chính</a>
 <div class="demo-bar" role="note"><b>Bản demo.</b> Nội dung, giá và hình ảnh đều là minh họa – không nhận đặt phòng thật.</div>
 <header class="top"><div class="wrap top-in">
 <a class="logo" href="{p}index.html"><span class="lg-ico" aria-hidden="true">⌂</span><span>Nhà Gió<small>Khách sạn ven biển · demo</small></span></a>
@@ -69,7 +94,7 @@ def page(path,title,desc,body,current=None,jsonld=None,extra_head=''):
 <p class="demo"><b>Lưu ý bản demo:</b> Nhà Gió là khách sạn giả lập để trình diễn giao diện. Giá, đánh giá, địa chỉ, số điện thoại đều là minh họa; không có giấy phép kinh doanh thật; ảnh là ảnh minh họa có giấy phép Unsplash, không chụp tại cơ sở (<a href="{p}nguon-anh.html">nguồn ảnh</a>). Không có dữ liệu nào được gửi lên máy chủ. © <span data-year>2026</span></p>
 </div></footer>
 <div id="toasts" aria-live="polite"></div>
-<script src="{p}js/data.js"></script><script src="{p}js/art.js"></script><script src="{p}assets/site.js"></script>
+<script src="{p}js/data.js"></script><script src="{p}js/art.js"></script><script src="{p}assets/site.js"></script>{'<script src="assets/intro.js"></script>' if path=='index.html' else ''}
 </body></html>
 '''
 

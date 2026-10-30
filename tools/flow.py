@@ -16,7 +16,7 @@ def shot(pg,n,full=True):
     if pg.evaluate('document.documentElement.scrollWidth')>390:errs.append(f'{n}: overflow')
     if OUT:pg.evaluate('window.scrollTo(0,0)');pg.wait_for_timeout(150);f=f'{OUT}/{n}.png';pg.screenshot(path=f,full_page=full);shots.append(f)
 with sync_playwright() as p:
-    br=p.chromium.launch();ctx=br.new_context(viewport={'width':390,'height':844},device_scale_factor=2,locale='vi-VN',is_mobile=True,has_touch=True)
+    br=p.chromium.launch();ctx=br.new_context(viewport={'width':390,'height':844},device_scale_factor=2,locale='vi-VN',is_mobile=True,has_touch=True,reduced_motion='reduce')  # tắt intro + reveal để chụp tĩnh
     pg=ctx.new_page();pg.on('console',lambda m:m.type=='error' and errs.append('console: '+m.text));pg.on('pageerror',lambda e:errs.append(f'pageerror: {e}'))
     pg.goto(B+'index.html');pg.wait_for_load_state('networkidle');shot(pg,'flow-01-home',False)
     pg.click('#menuBtn');pg.click('#nav a[href$="phong/index.html"]');pg.wait_for_load_state('networkidle');shot(pg,'flow-02-loai-phong',False)

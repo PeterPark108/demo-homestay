@@ -103,3 +103,15 @@ Tất cả ảnh phòng/phong cảnh là **tranh minh họa SVG tự vẽ bằng
 - Thẻ phòng flex column, tiêu đề 1 dòng, giá thẳng đáy, hover (chỉ thiết bị có chuột) + focus bàn phím.
 - Quản lý: sidebar 232px ở ≥1100px (tab ngang khi nhỏ hơn, có mờ dần báo cuộn), ô bảng 12px 16px, cột tiền căn phải, badge trạng thái có chấm, nút "Lưu" chỉ chuyển màu chính khi hàng có thay đổi; bảng mobile thành thẻ.
 - Ảnh chụp mới: `screenshots/v2-*.png`.
+
+## Chuyển động & intro "gió" (hotel-v2)
+- Token: `--dur-1..4` (150/250/400/700ms), `--ease-out: cubic-bezier(.22,1,.36,1)` trong `assets/site.css`. Chỉ animate `transform`/`opacity` (riêng FAQ mở/đóng dùng WAAPI chiều cao, vòng focus dùng box-shadow ngắn).
+- Reveal khi cuộn: IntersectionObserver trong `assets/site.js`, chỉ bật khi `<html>` có class `.js` (đặt bằng script nhỏ trong `<head>`). Không có JS → nội dung luôn hiện; phần tử đang trong màn hình lúc tải không bị ẩn.
+- Hover/focus: thẻ phòng nhấc + ảnh zoom 1.04, ảnh thư viện zoom, nút nhấn scale .97, gạch chân menu desktop; hover chỉ trong `@media (hover:hover)`.
+- Chuyển trang: `@view-transition { navigation: auto; }` (Chrome/Edge 126+), trình duyệt khác chỉ fade-in nhẹ. Header đứng yên (`view-transition-name: site-header`).
+- Lightbox fade/scale + trượt ảnh, Esc vẫn đóng; tạm tính đếm số; lịch chọn ngày có hiệu ứng; header đổ bóng khi cuộn; menu mobile trượt/mờ; toast vào/ra.
+- `prefers-reduced-motion: reduce`: tắt mọi chuyển động, không intro, không view transition, reveal hiện ngay.
+- Intro (chỉ `index.html`, ~2,5 s, lần đầu mỗi phiên): `assets/intro.js` + CSS `.intro*`. Nút "Bỏ qua" được focus đầu tiên, Esc hoặc bấm bất kỳ đâu để bỏ qua. Cờ `sessionStorage.nhagio_intro_seen`.
+  **Xem lại intro:** mở tab mới (phiên mới) hoặc chạy trong Console: `sessionStorage.removeItem('nhagio_intro_seen'); location.reload()`.
+- Ảnh có thêm bản `-md.jpg` (960px) trong srcset để mobile tải nhẹ hơn; ảnh hero được preload.
+- Kiểm tra: `python3 tools/check_links.py`, `tools/shoot.py`, `tools/flow.py` (2 tool này chạy với reduced-motion để chụp tĩnh), `tools/motion.py` (khung intro, hover/reveal, video `screenshots/hotel-v2/motion-demo.mp4`).

@@ -14,7 +14,7 @@ LOADIMG='''async()=>{document.querySelectorAll('img[loading=lazy]').forEach(i=>i
 with sync_playwright() as p:
     br=p.chromium.launch()
     for dev,w,h in(('desktop',1440,900),('mobile',390,844),('narrow',360,780)):
-        ctx=br.new_context(viewport={'width':w,'height':h},device_scale_factor=1,locale='vi-VN')
+        ctx=br.new_context(viewport={'width':w,'height':h},device_scale_factor=1,locale='vi-VN',reduced_motion='reduce')  # tắt intro + reveal để chụp full-page
         for name,url in PAGES:
             pg=ctx.new_page();pg.on('console',lambda m,n=name:m.type=='error' and errs.append(f'{dev}/{n}: {m.text}'));pg.on('pageerror',lambda e,n=name:errs.append(f'{dev}/{n}: {e}'))
             pg.goto(B+url);pg.wait_for_load_state('networkidle')

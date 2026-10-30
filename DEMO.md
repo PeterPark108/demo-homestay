@@ -22,3 +22,9 @@ Website tĩnh, khách sạn **giả lập**: giá, đánh giá, địa chỉ đ�
 - Ảnh chụp luồng mobile 390 px: `screenshots/hotel-v2/flow-01-home.png` … `flow-06-menu.png`.
 
 Bản cũ vẫn giữ ở `homestay-v1/index.html`.
+
+## Chuyển động & intro
+- Lần đầu mở trang chủ trong một phiên sẽ có màn intro "gió" ~2,5 giây; bấm **Bỏ qua**, Esc hoặc chạm bất kỳ đâu để vào ngay.
+- Muốn xem lại intro: mở tab mới/cửa sổ ẩn danh, hoặc xóa `nhagio_intro_seen` trong sessionStorage rồi tải lại.
+- Nếu máy bật "Giảm chuyển động" (Reduce motion) thì không có intro và hiệu ứng.
+- Video demo mobile: `screenshots/hotel-v2/motion-demo.mp4`.
