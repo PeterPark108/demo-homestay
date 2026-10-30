@@ -1,7 +1,7 @@
 :root{
 /* v2 design tokens – theo design-spec.md */
---color-bg:#fffaf5;--color-surface:#fff;--color-surface-alt:#fbeee2;--color-text:#2b2622;--color-text-muted:#6f645b;--color-text-disabled:#a8917c;--color-text-inverse:#fff;
---color-border:#eee2d6;--color-border-strong:#a8917c;--color-primary:#b5472c;--color-primary-hover:#9a3a22;--color-accent:#e76f51;--color-secondary:#1f5f63;
+--color-bg:#fffaf5;--color-surface:#fff;--color-surface-alt:#fbeee2;--color-text:#2b2622;--color-text-muted:#6f645b;--color-text-disabled:#a38b76;--color-text-inverse:#fff;
+--color-border:#eee2d6;--color-border-strong:#a38b76;--color-primary:#b5472c;--color-primary-hover:#9a3a22;--color-accent:#e76f51;--color-secondary:#1f5f63;
 --color-success:#1f7a6e;--color-success-text:#11623f;--color-danger:#b42318;--color-danger-bg:#fff5f5;--color-warning-bg:#fff4e5;--color-warning-border:#f5d0a9;--color-fav:#e63946;
 --focus-ring:0 0 0 3px rgba(181,71,44,.35);--header-h:64px;
 --fs-xs:.75rem;--fs-sm:.875rem;--fs-base:1rem;--fs-md:1.125rem;--fs-lg:1.375rem;--fs-xl:1.75rem;--fs-2xl:clamp(1.75rem,4vw,2.25rem);--fs-display:clamp(2.25rem,6vw,3.5rem);

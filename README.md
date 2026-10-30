@@ -1,3 +1,54 @@
+# Nhà Gió – website khách sạn DEMO (hotel-v2)
+
+> **Bản demo.** Nhà Gió là khách sạn giả lập. Giá, đánh giá, địa chỉ, số điện thoại đều là minh họa; không có giấy phép thật; ảnh là tranh SVG tự vẽ. Không gửi dữ liệu đi đâu (không có lệnh gọi mạng; đặt phòng chỉ lưu localStorage). Chỉ làm local – chưa đưa lên myagentvn.com, chưa push/PR.
+
+## Cách mở
+- Nhanh: nhấp đúp `index.html` (chạy được qua file://).
+- Hoặc: `python3 -m http.server 8000` trong thư mục này rồi mở http://localhost:8000/
+- Sửa nội dung: chỉnh `build.py` rồi chạy `python3 build.py` (sinh lại toàn bộ .html, `sitemap.xml`, `robots.txt`).
+
+## Bố cục (ít phá nhất)
+- Site khách sạn mới ở gốc (`index.html` + các trang `.html`, `phong/`).
+- **Bản cũ giữ nguyên**: `css/app.css`, `js/*.js` không bị xóa; SPA homestay v1 (kể cả trang quản lý) mở ở `homestay-v1/index.html` (và `homestay-v1/index.html#/quan-ly`). Trạng thái gốc được tag `v1-homestay-demo` trên nhánh `main`.
+- Site mới dùng lại `js/data.js` (dữ liệu phòng) và `js/art.js` (tranh SVG) của bản cũ.
+
+| Trang | File |
+|---|---|
+| Trang chủ (hero + thanh đặt phòng, phòng nổi bật, tiện ích, ưu đãi, đánh giá mẫu, vị trí) | `index.html` |
+| Loại phòng (lọc loại/số khách, sắp xếp) | `phong/index.html` |
+| Chi tiết phòng ×7 (gallery + lightbox, tiện nghi, lịch 7 trạng thái, khung đặt phòng sticky + tạm tính) | `phong/<slug>.html` |
+| Tiện ích & dịch vụ | `tien-ich.html` |
+| Thư viện ảnh (lọc + lightbox bàn phím) | `thu-vien-anh.html` |
+| Ưu đãi | `uu-dai.html` |
+| Đặt phòng (form + kiểm tra hợp lệ + tạm tính + màn xác nhận, lưu `localStorage['nhagio_hotel_bookings']`) | `dat-phong.html` |
+| Vị trí & liên hệ (bản đồ SVG, form không gửi) | `lien-he.html` |
+| Đánh giá mẫu | `danh-gia.html` |
+| FAQ (accordion) | `faq.html` |
+| Chính sách (hủy, nhận/trả, trẻ em, thú cưng, riêng tư) | `chinh-sach.html` |
+| 404 | `404.html` |
+
+Tạm tính = giá/đêm (minh họa) × số đêm + phí dọn phòng (minh họa) + phí dịch vụ 5%. Ngày "đã kín" là dữ liệu minh họa tạo cố định trong `assets/site.js`.
+
+## Tệp
+`assets/site.css` (token theo design-spec.md), `assets/site.js` (menu, lịch, lọc, form, lightbox, FAQ), `assets/favicon.svg`, `assets/og.svg`, `build.py`, `tools/check_links.py`, `tools/contrast.py`, `tools/shoot.py` (Playwright: ảnh + lỗi console + thử tương tác), `screenshots/hotel-v2/`.
+
+## SEO & truy cập
+- Mỗi trang có `<title>`, meta description, canonical **placeholder** (`https://example.invalid/nha-gio`), Open Graph, JSON-LD `Hotel` ghi rõ demo (không có rating), `HotelRoom`, `FAQPage`.
+- **`robots.txt` chặn toàn bộ và mọi trang có `noindex,nofollow`** vì đang là demo – gỡ khi lên web thật và thay tên miền trong `build.py`.
+- `lang="vi"`, skip-link, nav có `aria-current`, menu mobile `aria-expanded` + Esc, label cho mọi ô, lỗi gắn `aria-describedby`, focus ring, `prefers-reduced-motion`, vùng chạm ≥44px, responsive 360–1440px.
+
+## Kiểm tra đã chạy
+`python3 tools/check_links.py` (0 lỗi) · `python3 tools/contrast.py` (mọi cặp chữ ≥4.5:1) · `python3 tools/shoot.py` (0 lỗi console, 0 tràn ngang ở 360/390/1440).
+Ghi chú: `--color-border-strong` trong spec `#a8917c` thực tế chỉ 2.997:1 trên trắng → đổi thành `#a38b76` (3.22:1) ở cả `assets/site.css` và `css/app.css`.
+
+## Còn lại / cần Peter
+- Nội dung thật: tên, địa chỉ, SĐT, giá, ảnh chụp, chính sách, giấy phép – thay toàn bộ placeholder.
+- Đặt phòng thật cần backend/cổng thanh toán (chưa có). Ô ngày dùng `input type=date` của trình duyệt.
+- Đưa lên web: phải qua PR và chờ Peter gõ đúng "Duyệt PR #xx". Chưa mở PR nào.
+
+---
+
+# (Bản cũ) README homestay v1
 # Nhà Gió Homestay – web app DEMO (dữ liệu mẫu)
 
 Bản demo đặt phòng homestay kiểu Airbnb cho một homestay **giả lập** ở Quy Nhơn (Bình Định).
