@@ -107,7 +107,7 @@ if(bf){const q=new URLSearchParams(location.search),E=bf.elements,t=today(),sel=
 // thư viện ảnh: lọc + lightbox
 const lb=$('#lb');
 if(lb){const items=()=>$$('[data-lb]').filter(b=>!b.closest('[hidden]'));let i=0,opener=null;
- const show=n=>{const it=items();i=(n+it.length)%it.length;const b=it[i];const a=$('.art',lb);a.innerHTML='';a.insertAdjacentHTML('afterbegin',artSVG(b.dataset.art,+b.dataset.pal||0,b.dataset.cap));$('#lbCap').textContent=b.dataset.cap;$('#lbNum').textContent=`${i+1} / ${it.length}`};
+ const show=n=>{const it=items();i=(n+it.length)%it.length;const b=it[i];const a=$('.art',lb);a.innerHTML='';if(b.dataset.src){const im=new Image();im.src=b.dataset.src;im.alt=b.dataset.alt||'';a.classList.add('photo');a.appendChild(im)}else{a.classList.remove('photo');a.insertAdjacentHTML('afterbegin',artSVG(b.dataset.art,+b.dataset.pal||0,b.dataset.cap))}$('#lbCap').textContent=b.dataset.cap;$('#lbNum').textContent=`${i+1} / ${it.length}`};
  document.addEventListener('click',e=>{const b=e.target.closest('[data-lb]');if(!b)return;opener=b;show(items().indexOf(b));lb.showModal();$('.x',lb).focus()});
  $('.x',lb).onclick=()=>lb.close();$('.pv',lb).onclick=()=>show(i-1);$('.nx',lb).onclick=()=>show(i+1);
  lb.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1)});

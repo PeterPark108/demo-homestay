@@ -14,6 +14,16 @@ ROOMS = [  # khớp SEED_ROOMS trong js/data.js
  dict(id='r7',slug='villa-ho-boi-eo-gio',name='Villa Hồ Bơi Eo Gió',type='Nguyên căn',price=3500000,clean=400000,guests=8,beds='4 phòng ngủ',size=160,scene='pool',pal=6,amen=['wifi','ac','view','pool','kitchen','bbq','parking','washer','bath'],desc='Villa riêng có hồ bơi, sân hiên hướng biển và bếp lớn. Phù hợp kỳ nghỉ nhóm 6–8 người.'),
 ]
 AMEN={'wifi':('📶','Wi‑Fi'),'ac':('❄️','Điều hòa'),'view':('🌅','Hướng biển'),'hill':('🌲','Hướng đồi thông'),'balcony':('🪴','Ban công'),'tv':('📺','Smart TV'),'kitchen':('🍳','Bếp riêng'),'pool':('🏊','Hồ bơi'),'bbq':('🔥','Khu BBQ'),'parking':('🅿️','Chỗ đậu xe'),'washer':('🧺','Máy giặt'),'breakfast':('🥐','Bữa sáng'),'pet':('🐾','Cho thú cưng'),'bath':('🛁','Bồn tắm')}
+PH=json.load(open(os.path.join(ROOT,'assets/photos/manifest.json'),encoding='utf-8'))['photos']
+def P(sec): return [x for x in PH if x['section']==sec]
+def img(x,p,sizes='(max-width:760px) 100vw, 50vw',eager=False):
+    lz='fetchpriority="high"' if eager else 'loading="lazy" decoding="async"'
+    return f'<img src="{p}{x["path"]}" srcset="{p}{x["thumb"]} {x["thumb_width"]}w, {p}{x["path"]} {x["width"]}w" sizes="{sizes}" width="{x["width"]}" height="{x["height"]}" alt="{E(x["alt_vi"])}" {lz}>'
+def photo(x,p,cls='',sizes='(max-width:760px) 100vw, 33vw',eager=False):
+    return f'<div class="art photo {cls}">{img(x,p,sizes,eager)}</div>'
+def lbattrs(x,p,cap):
+    return f'data-lb data-src="{p}{x["path"]}" data-alt="{E(x["alt_vi"])}" data-cap="{E(cap)} · Ảnh: {E(x["photographer"])} / Unsplash"'
+COVER={'phong-song-bien':2,'bungalow-dua':0,'can-doi-thong':1,'phong-gac-mai':0,'phong-gia-dinh-hoa-giay':0,'studio-ghenh-rang':0,'villa-ho-boi-eo-gio':0}
 money=lambda n: f"{n:,}".replace(',', '.')+'₫'
 NAV=[('index.html','Trang chủ'),('phong/index.html','Loại phòng'),('tien-ich.html','Tiện ích'),('thu-vien-anh.html','Thư viện ảnh'),('uu-dai.html','Ưu đãi'),('danh-gia.html','Đánh giá'),('lien-he.html','Liên hệ')]
 
@@ -33,7 +43,7 @@ def page(path,title,desc,body,current=None,jsonld=None,extra_head=''):
 <meta name="robots" content="noindex,nofollow">
 <link rel="canonical" href="{can}">
 <meta property="og:type" content="website"><meta property="og:locale" content="vi_VN"><meta property="og:site_name" content="Nhà Gió (demo)">
-<meta property="og:title" content="{E(title)} · Nhà Gió (demo)"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{can}"><meta property="og:image" content="{SITE}/assets/og.svg">
+<meta property="og:title" content="{E(title)} · Nhà Gió (demo)"><meta property="og:description" content="{E(desc)}"><meta property="og:url" content="{can}"><meta property="og:image" content="{SITE}/{P('hero')[0]['path']}"><meta property="og:image:width" content="{P('hero')[0]['width']}"><meta property="og:image:height" content="{P('hero')[0]['height']}"><meta property="og:image:alt" content="{E(P('hero')[0]['alt_vi'])}">
 <meta name="theme-color" content="#b5472c">
 <link rel="icon" href="{p}assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="{p}assets/site.css">{extra_head}
@@ -54,9 +64,9 @@ def page(path,title,desc,body,current=None,jsonld=None,extra_head=''):
 <div><h2>Nhà Gió (demo)</h2><p>Địa chỉ minh họa, thành phố ven biển, Việt Nam<br>Điện thoại: 0900 000 000 (số mẫu)<br>Email: xinchao@vidu.test (mẫu)</p></div>
 <div><h2>Lưu trú</h2><ul><li><a href="{p}phong/index.html">Loại phòng</a></li><li><a href="{p}dat-phong.html">Đặt phòng</a></li><li><a href="{p}uu-dai.html">Ưu đãi</a></li><li><a href="{p}tien-ich.html">Tiện ích &amp; dịch vụ</a></li></ul></div>
 <div><h2>Thông tin</h2><ul><li><a href="{p}faq.html">Câu hỏi thường gặp</a></li><li><a href="{p}chinh-sach.html">Chính sách</a></li><li><a href="{p}lien-he.html">Vị trí &amp; liên hệ</a></li><li><a href="{p}danh-gia.html">Đánh giá mẫu</a></li></ul></div>
-<div><h2>Bản cũ</h2><ul><li><a href="{p}homestay-v1/index.html">Demo homestay v1</a></li><li><a href="{p}homestay-v1/index.html#/quan-ly">Trang quản lý (demo)</a></li><li><a href="{p}thu-vien-anh.html">Thư viện ảnh</a></li></ul></div>
+<div><h2>Bản cũ</h2><ul><li><a href="{p}homestay-v1/index.html">Demo homestay v1</a></li><li><a href="{p}homestay-v1/index.html#/quan-ly">Trang quản lý (demo)</a></li><li><a href="{p}thu-vien-anh.html">Thư viện ảnh</a></li><li><a href="{p}nguon-anh.html">Nguồn ảnh</a></li></ul></div>
 </div>
-<p class="demo"><b>Lưu ý bản demo:</b> Nhà Gió là khách sạn giả lập để trình diễn giao diện. Giá, đánh giá, địa chỉ, số điện thoại đều là minh họa; không có giấy phép kinh doanh thật; ảnh là tranh SVG tự vẽ. Không có dữ liệu nào được gửi lên máy chủ. © <span data-year>2026</span></p>
+<p class="demo"><b>Lưu ý bản demo:</b> Nhà Gió là khách sạn giả lập để trình diễn giao diện. Giá, đánh giá, địa chỉ, số điện thoại đều là minh họa; không có giấy phép kinh doanh thật; ảnh là ảnh minh họa có giấy phép Unsplash, không chụp tại cơ sở (<a href="{p}nguon-anh.html">nguồn ảnh</a>). Không có dữ liệu nào được gửi lên máy chủ. © <span data-year>2026</span></p>
 </div></footer>
 <div id="toasts" aria-live="polite"></div>
 <script src="{p}js/data.js"></script><script src="{p}js/art.js"></script><script src="{p}assets/site.js"></script>
@@ -71,7 +81,7 @@ def head(p,title,lead,items):
 
 def card(r,p,order=0,showbadge=False):
     return f'''<li data-room data-type="{E(r['type'])}" data-guests="{r['guests']}" data-price="{r['price']}" data-order="{order}"><article class="card">
-{art(r['scene'],r['pal'],r['name'])}{'<span class="badge">Nổi bật</span>' if showbadge else ''}
+{photo(P(r['slug'])[COVER[r['slug']]],p,sizes='(max-width:760px) 100vw, 400px') if P(r['slug']) else art(r['scene'],r['pal'],r['name'])}{'<span class="badge">Nổi bật</span>' if showbadge else ''}
 <div class="cb"><p class="sm muted" style="margin:0">{E(r['type'])}</p><h3><a href="{p}phong/{r['slug']}.html">{E(r['name'])}</a></h3>
 <p class="meta">{r['guests']} khách · {E(r['beds'])} · {r['size']} m²</p>
 <p class="price"><b>{money(r['price'])}</b> <span class="muted sm">/ đêm · giá minh họa</span></p></div></article></li>'''
@@ -81,8 +91,10 @@ def rv(n,room,s,t):
     return f'<li><figure class="rv"><div class="who"><span class="av" aria-hidden="true">{n[-1]}</span><div><b>{n}</b><br><span class="sm muted">{room}</span></div></div><p class="stars" aria-label="{s} trên 5 sao (mẫu)">{"★"*s}{"☆"*(5-s)}</p><blockquote><p>{t}</p></blockquote><figcaption><span class="demo-tag">Đánh giá mẫu (demo)</span></figcaption></figure></li>'
 
 OFFERS=[('Ở 3 đêm, giảm 10%','sea',0,'DEMO3DEM','Áp dụng minh họa cho mọi loại phòng khi ở từ 3 đêm.'),('Đặt sớm 30 ngày','hill',2,'DEMOSOM','Giảm minh họa 15% khi đặt trước tối thiểu 30 ngày.'),('Gói gia đình cuối tuần','pool',6,'DEMOGIADINH','Tặng bữa sáng cho 2 trẻ em (nội dung demo).'),('Ở dài ngày làm việc từ xa','bed',5,'DEMOREMOTE','Từ 7 đêm: giá tuần minh họa, giặt ủi miễn phí.')]
+OFFIMG={'Ở 3 đêm, giảm 10%':0,'Đặt sớm 30 ngày':1,'Gói gia đình cuối tuần':2,'Ở dài ngày làm việc từ xa':3}
 def offer(t,k,pal,code,d,p):
-    return f'<li><article class="offer">{art(k,pal,t)}<div class="ob"><span class="demo-tag">Ưu đãi minh họa</span><h3 style="margin-top:8px">{t}</h3><p class="muted">{d}</p><p class="sm">Mã: <span class="code">{code}</span> (mã demo, không có giá trị)</p><a class="btn" href="{p}dat-phong.html">Đặt với ưu đãi</a></div></article></li>'
+    ph=P('uu-dai')
+    return f'<li><article class="offer">{photo(ph[OFFIMG[t]],p,sizes="(max-width:560px) 100vw, 200px") if len(ph)>OFFIMG[t] else art(k,pal,t)}<div class="ob"><span class="demo-tag">Ưu đãi minh họa</span><h3 style="margin-top:8px">{t}</h3><p class="muted">{d}</p><p class="sm">Mã: <span class="code">{code}</span> (mã demo, không có giá trị)</p><a class="btn" href="{p}dat-phong.html">Đặt với ưu đãi</a></div></article></li>'
 
 MAP='''<svg viewBox="0 0 800 450" role="img" aria-labelledby="mapT mapD" xmlns="http://www.w3.org/2000/svg"><title id="mapT">Bản đồ minh họa</title><desc id="mapD">Sơ đồ minh họa không theo tỉ lệ: khách sạn Nhà Gió nằm giữa bãi biển và đồi thông, gần chợ và bến xe (vị trí giả lập).</desc>
 <rect width="800" height="450" fill="#eef4e8"/><path d="M0 300 Q200 260 400 300 T800 280 L800 450 L0 450z" fill="#8ecae6"/><path d="M0 290 Q200 250 400 290 T800 270 L800 290 Q600 300 400 315 T0 310z" fill="#f3d9a4"/>
@@ -107,7 +119,7 @@ p=''
 FEAT=[('🌊','Sát biển','Vài bước chân ra bãi cát (mô tả minh họa).'),('🏊','Hồ bơi','Hồ bơi ngoài trời mở 6:00–21:00.'),('🥐','Bữa sáng','Bữa sáng địa phương phục vụ tại sảnh.'),('🚲','Xe đạp','Mượn xe đạp dạo quanh khu phố.')]
 feats=''.join(f'<li class="feat"><div class="ico" aria-hidden="true">{i}</div><h3>{t}</h3><p>{d}</p></li>' for i,t,d in FEAT)
 pages['index.html']=('Khách sạn ven biển – đặt phòng trực tuyến','Nhà Gió (demo): khách sạn ven biển giả lập với 7 loại phòng, hồ bơi, bữa sáng. Website trình diễn – giá và nội dung minh họa.',f'''
-<section class="hero">{art('sea',0,'Toàn cảnh khách sạn bên bờ biển',tag=False)}<div class="wrap hero-in">
+<section class="hero">{photo(P('hero')[0],p,sizes='100vw',eager=True)}<div class="wrap hero-in">
 <p class="eyebrow">Khách sạn ven biển · bản demo</p><h1>Nghỉ ngơi nơi gió biển gặp đồi thông</h1>
 <p class="lead">7 loại phòng từ phòng đôi gác mái đến villa hồ bơi. Chọn ngày, xem tạm tính ngay – mọi giá trên trang là giá minh họa.</p>
 {bbar(p)}</div></section>
@@ -141,7 +153,9 @@ pages['phong/index.html']=('Các loại phòng','Danh sách 7 loại phòng tạ
 # --- Chi tiết phòng
 GKINDS=lambda r:[(r['scene'],'Toàn cảnh'),('bed','Phòng ngủ'),('kitchen' if 'kitchen' in r['amen'] else 'living','Bếp' if 'kitchen' in r['amen'] else 'Phòng khách'),('bath','Phòng tắm'),('living','Góc thư giãn')]
 for r in ROOMS:
-    gal=''.join(f'<button type="button" data-lb data-art="{k}" data-pal="{r["pal"]}" data-cap="{E(r["name"])} – {c} (ảnh minh họa)" aria-label="Phóng to ảnh: {c}">{art(k,r["pal"],r["name"]+" – "+c)}</button>' for k,c in GKINDS(r))
+    rp=P(r['slug'])
+    gal=''.join(f'<button type="button" {lbattrs(x,p,r["name"]+" – "+x["alt_vi"])} aria-label="Phóng to ảnh: {E(x["alt_vi"])}">{photo(x,p,sizes="(max-width:760px) 100vw, 50vw" if i==0 else "(max-width:760px) 50vw, 25vw",eager=(i==0))}</button>' for i,x in enumerate(rp)) if rp else ''.join(f'<button type="button" data-lb data-art="{k}" data-pal="{r["pal"]}" data-cap="{E(r["name"])} – {c} (ảnh minh họa)" aria-label="Phóng to ảnh: {c}">{art(k,r["pal"],r["name"]+" – "+c)}</button>' for k,c in GKINDS(r))
+    if len(rp)>5: gal+=f'<span class="gal-more" aria-hidden="true">+{len(rp)-5} ảnh</span>'
     am=''.join(f'<li><span aria-hidden="true">{AMEN[a][0]}</span>{AMEN[a][1]}</li>' for a in r['amen'])
     others=''.join(card(o,p,i) for i,o in enumerate([x for x in ROOMS if x is not r][:3]))
     ld={"@context":"https://schema.org","@type":"HotelRoom","name":r['name']+" (demo)","description":r['desc']+" Nội dung minh họa.","occupancy":{"@type":"QuantitativeValue","maxValue":r['guests']},"floorSize":{"@type":"QuantitativeValue","value":r['size'],"unitCode":"MTK"}}
@@ -168,24 +182,26 @@ for r in ROOMS:
 <section class="sec" aria-labelledby="h-ot"><h2 id="h-ot">Phòng khác</h2><ul class="grid" style="list-style:none;padding:0;margin:0">{others}</ul></section></div>
 <dialog class="lb" id="lb" aria-label="Xem ảnh lớn"><div class="lb-in"><div class="art"></div><p class="lb-cap"><span id="lbCap"></span><span id="lbNum"></span></p>
 <button class="x" type="button" aria-label="Đóng">✕</button><button class="pv" type="button" aria-label="Ảnh trước">‹</button><button class="nx" type="button" aria-label="Ảnh sau">›</button></div></dialog>'''
-    pages[f'phong/{r["slug"]}.html']=(r['name'],f'{r["name"]} – {r["type"]}, tối đa {r["guests"]} khách, {r["size"]} m². Xem ảnh minh họa, tiện nghi, lịch trống và tạm tính (demo).',body,'phong/index.html',ld)
+    pages[f'phong/{r["slug"]}.html']=(r['name'],f'{r["name"]} – {r["type"]}, tối đa {r["guests"]} khách, {r["size"]} m². Xem ảnh, tiện nghi, lịch trống và tạm tính (demo).',body,'phong/index.html',ld)
 
 p=''
 # --- Tiện ích
 SV=[('🏊','Hồ bơi ngoài trời','Mở 6:00–21:00, có khăn tắm.'),('🥐','Nhà hàng & bữa sáng','Bữa sáng 6:30–9:30, thực đơn địa phương (minh họa).'),('💆','Spa & massage','Đặt lịch tại lễ tân (dịch vụ demo).'),('🚐','Đưa đón','Hỗ trợ đặt xe từ sân bay/bến xe (minh họa).'),('🚲','Xe đạp & xe máy','Mượn xe đạp; hỗ trợ thuê xe máy.'),('🧺','Giặt ủi','Dịch vụ giặt trong ngày.'),('📶','Wi‑Fi toàn khu','Miễn phí trong phòng và khu chung.'),('👶','Góc trẻ em','Sân chơi nhỏ, ghế ăn cho bé.'),('🅿️','Bãi đậu xe','Chỗ đậu xe trong khuôn viên.'),('🧳','Giữ hành lý','Miễn phí trước nhận và sau trả phòng.'),('🔥','Khu BBQ','Đặt trước để chuẩn bị bếp nướng.'),('🗺️','Tư vấn tour','Gợi ý lịch trình quanh vùng (demo).')]
 pages['tien-ich.html']=('Tiện ích & dịch vụ','Tiện ích và dịch vụ tại Nhà Gió (demo): hồ bơi, bữa sáng, spa, đưa đón, xe đạp, giặt ủi, góc trẻ em.',head(p,'Tiện ích &amp; dịch vụ','Danh sách dịch vụ minh họa. Một số dịch vụ có thể tính phí – giá cụ thể sẽ được cập nhật khi có thông tin thật.',[('index.html','Trang chủ'),(None,'Tiện ích')])+f'''
-<section class="sec" style="padding-top:24px"><div class="wrap"><ul class="grid g4" style="list-style:none;padding:0;margin:0">{''.join(f'<li class="feat"><div class="ico" aria-hidden="true">{i}</div><h2 style="font-size:var(--fs-md);margin-bottom:4px">{t}</h2><p>{d}</p></li>' for i,t,d in SV)}</ul></div></section>
-<section class="sec alt"><div class="wrap split"><div class="map">{art('pool',6,'Khu hồ bơi',cls='r43')}</div><div><h2>Khung giờ chính</h2><ul class="ticks"><li>Lễ tân: 24/7</li><li>Bữa sáng: 6:30 – 9:30</li><li>Hồ bơi: 6:00 – 21:00</li><li>Yên lặng sau 22:00</li></ul><a class="btn primary" href="dat-phong.html">Đặt phòng</a></div></div></section>''','tien-ich.html')
+<section class="sec" style="padding-top:24px"><div class="wrap"><ul class="grid g4" style="list-style:none;padding:0;margin:0">{''.join(f'<li class="feat"><div class="ico" aria-hidden="true">{i}</div><h2 style="font-size:var(--fs-md);margin-bottom:4px">{t}</h2><p>{d}</p></li>' for i,t,d in SV)}</ul>
+<h2 style="margin-top:40px">Hình ảnh tiện ích</h2><ul class="masonry">{''.join(f'<li><figure><button type="button" {lbattrs(x,p,x["alt_vi"])} aria-label="Phóng to: {E(x["alt_vi"])}">{photo(x,p,sizes="(max-width:760px) 100vw, 300px")}</button><figcaption>{E(x["alt_vi"])}</figcaption></figure></li>' for x in P('tien-ich'))}</ul></div></section>
+<dialog class="lb" id="lb" aria-label="Xem ảnh lớn"><div class="lb-in"><div class="art"></div><p class="lb-cap"><span id="lbCap"></span><span id="lbNum"></span></p>
+<button class="x" type="button" aria-label="Đóng">✕</button><button class="pv" type="button" aria-label="Ảnh trước">‹</button><button class="nx" type="button" aria-label="Ảnh sau">›</button></div></dialog>
+<section class="sec alt"><div class="wrap split"><div class="map">{photo(P('tien-ich')[0],p,cls='r43',sizes='(max-width:760px) 100vw, 50vw')}</div><div><h2>Khung giờ chính</h2><ul class="ticks"><li>Lễ tân: 24/7</li><li>Bữa sáng: 6:30 – 9:30</li><li>Hồ bơi: 6:00 – 21:00</li><li>Yên lặng sau 22:00</li></ul><a class="btn primary" href="dat-phong.html">Đặt phòng</a></div></div></section>''','tien-ich.html')
 
 # --- Thư viện ảnh
+OUTK={'view','view-2','ngoai-that','ban-cong','ho-boi','san-hien','hien-vong'}
 G=[]
 for r in ROOMS:
-    for k,c in GKINDS(r)[:3]:
-        cat='ngoai' if k in('sea','hill','pool') else 'phong'
-        G.append((cat,k,r['pal'],f"{r['name']} – {c}"))
-G+= [('tien','pool',6,'Hồ bơi'),('tien','kitchen',2,'Bếp nhà hàng'),('tien','living',1,'Sảnh chờ'),('tien','bath',4,'Khu spa')]
-gli=''.join(f'<li data-cat="{c}"><figure><button type="button" data-lb data-art="{k}" data-pal="{pl}" data-cap="{E(cap)} (ảnh minh họa)" aria-label="Phóng to: {E(cap)}">{art(k,pl,cap)}</button><figcaption>{E(cap)}</figcaption></figure></li>' for c,k,pl,cap in G)
-pages['thu-vien-anh.html']=('Thư viện ảnh','Thư viện ảnh minh họa của Nhà Gió (demo): phòng nghỉ, cảnh quan, tiện ích. Tranh SVG tự vẽ.',head(p,'Thư viện ảnh','Tất cả hình là tranh minh họa SVG tự vẽ, không phải ảnh chụp thực tế. Bấm vào ảnh để xem lớn; dùng phím ← → để chuyển, Esc để đóng.',[('index.html','Trang chủ'),(None,'Thư viện ảnh')])+f'''
+    for x in P(r['slug']): G.append(('ngoai' if x['key'] in OUTK else 'phong',x,f"{r['name']} – {x['alt_vi']}"))
+G+=[('tien',x,x['alt_vi']) for x in P('tien-ich')]+[('ngoai',x,'Quanh khu vực – '+x['alt_vi']) for x in P('vi-tri')]
+gli=''.join(f'<li data-cat="{c}"><figure><button type="button" {lbattrs(x,p,cap)} aria-label="Phóng to: {E(cap)}">{photo(x,p,sizes="(max-width:600px) 100vw, 300px")}</button><figcaption>{E(cap)}</figcaption></figure></li>' for c,x,cap in G)
+pages['thu-vien-anh.html']=('Thư viện ảnh','Thư viện ảnh của Nhà Gió (demo): phòng nghỉ, cảnh quan, tiện ích. Ảnh minh họa có giấy phép từ Unsplash.',head(p,'Thư viện ảnh','Ảnh thật có giấy phép Unsplash, dùng để minh họa – không phải ảnh chụp tại Nhà Gió (khách sạn giả lập). Xem <a href="nguon-anh.html">nguồn ảnh</a>. Bấm vào ảnh để xem lớn; dùng phím ← → để chuyển, Esc để đóng.',[('index.html','Trang chủ'),(None,'Thư viện ảnh')])+f'''
 <section class="sec" style="padding-top:24px"><div class="wrap"><div class="filters" role="group" aria-label="Lọc ảnh"><button class="chip" data-filter="all" aria-pressed="true">Tất cả</button><button class="chip" data-filter="phong" aria-pressed="false">Phòng</button><button class="chip" data-filter="ngoai" aria-pressed="false">Cảnh quan</button><button class="chip" data-filter="tien" aria-pressed="false">Tiện ích</button></div>
 <ul class="masonry">{gli}</ul></div></section>
 <dialog class="lb" id="lb" aria-label="Xem ảnh lớn"><div class="lb-in"><div class="art"></div><p class="lb-cap"><span id="lbCap"></span><span id="lbNum"></span></p>
@@ -222,7 +238,8 @@ pages['dat-phong.html']=('Đặt phòng','Đặt phòng Nhà Gió (demo): chọn
 # --- Liên hệ
 pages['lien-he.html']=('Vị trí & liên hệ','Vị trí minh họa và thông tin liên hệ mẫu của Nhà Gió (demo). Form liên hệ không gửi dữ liệu.',head(p,'Vị trí &amp; liên hệ','Địa chỉ, số điện thoại và bản đồ đều là minh họa.',[('index.html','Trang chủ'),(None,'Liên hệ')])+f'''
 <section class="sec" style="padding-top:24px"><div class="wrap split" style="align-items:start">
-<div><div class="map">{MAP}</div><h2 style="margin-top:24px">Thông tin</h2><ul class="ticks"><li>Địa chỉ minh họa, thành phố ven biển, Việt Nam</li><li>Điện thoại: 0900 000 000 (số mẫu)</li><li>Email: xinchao@vidu.test (mẫu)</li><li>Lễ tân: 24/7</li></ul></div>
+<div><div class="map">{MAP}</div><h2 style="margin-top:24px">Thông tin</h2><ul class="ticks"><li>Địa chỉ minh họa, thành phố ven biển, Việt Nam</li><li>Điện thoại: 0900 000 000 (số mẫu)</li><li>Email: xinchao@vidu.test (mẫu)</li><li>Lễ tân: 24/7</li></ul>
+<h2 style="margin-top:24px">Quanh khu vực</h2><p class="sm muted">Ảnh minh họa cảnh ven biển miền Trung, không phải vị trí thật của khách sạn demo.</p><ul class="masonry" style="grid-template-columns:repeat(auto-fill,minmax(180px,1fr))">{''.join(f'<li><figure>{photo(x,p,cls="r43",sizes="(max-width:600px) 50vw, 200px")}<figcaption>{E(x["alt_vi"])}</figcaption></figure></li>' for x in P('vi-tri'))}</ul></div>
 <form id="contactForm" class="panel" novalidate><h2>Gửi lời nhắn</h2><p class="sm muted">Form demo: nội dung không được gửi đi đâu.</p>
 <div class="fg"><label for="cname">Họ và tên</label><input id="cname" name="cname" autocomplete="name" aria-describedby="cname-err"><p class="err" id="cname-err"></p></div>
 <div class="fg"><label for="cemail">Email</label><input id="cemail" name="cemail" type="email" autocomplete="email" aria-describedby="cemail-err"><p class="err" id="cemail-err"></p></div>
@@ -246,6 +263,14 @@ POL=[('huy','Hủy &amp; thay đổi đặt phòng',['Hủy miễn phí trước
 toc=''.join(f'<li><a href="#{i}">{t}</a></li>' for i,t,_ in POL)
 pol=''.join(f'<h2 id="{i}">{t}</h2><ul>{"".join(f"<li>{x}</li>" for x in xs)}</ul>' for i,t,xs in POL)
 pages['chinh-sach.html']=('Chính sách','Chính sách minh họa của Nhà Gió (demo): hủy phòng, nhận/trả phòng, trẻ em, thú cưng, quyền riêng tư.',head(p,'Chính sách','Nội dung chính sách mang tính minh họa, cần được thay bằng chính sách chính thức trước khi dùng thật.',[('index.html','Trang chủ'),(None,'Chính sách')])+f'<section class="sec" style="padding-top:24px"><div class="wrap prose"><nav class="toc" aria-label="Mục lục"><b>Mục lục</b><ul>{toc}</ul></nav>{pol}</div></section>','chinh-sach.html')
+
+# --- Nguồn ảnh
+rows=''.join(f'<tr><td><img src="{x["thumb"]}" width="96" height="{round(96*x["thumb_height"]/x["thumb_width"])}" alt="" loading="lazy" decoding="async" class="cr-th"></td><td>{E(x["alt_vi"])}<br><span class="sm muted">{E(x["section"])}</span></td><td><a href="{x["photographer_url"]}" rel="noopener">{E(x["photographer"])}</a></td><td><a href="{x["page_url"]}" rel="noopener">Unsplash</a></td><td><a href="{x["license_url"]}" rel="noopener">{x["license"]}</a></td></tr>' for x in PH)
+names=sorted({x['photographer'] for x in PH})
+pages['nguon-anh.html']=('Nguồn ảnh','Danh sách nguồn ảnh, nhiếp ảnh gia và giấy phép của các ảnh dùng trên website demo Nhà Gió.',head('','Nguồn ảnh',f'Website dùng {len(PH)} ảnh thật từ Unsplash theo <a href="https://unsplash.com/license">Unsplash License</a> (dùng miễn phí, kể cả thương mại; không bắt buộc ghi nguồn nhưng chúng tôi vẫn ghi để cảm ơn tác giả). Ảnh chỉ để minh họa, không chụp tại Nhà Gió – khách sạn giả lập.',[('index.html','Trang chủ'),(None,'Nguồn ảnh')])+f'''
+<section class="sec" style="padding-top:24px"><div class="wrap"><p><b>Nhiếp ảnh gia ({len(names)}):</b> {E(", ".join(names))}.</p>
+<div class="tbl-wrap"><table class="cr"><caption class="sr-only">Danh sách ảnh và giấy phép</caption><thead><tr><th scope="col">Ảnh</th><th scope="col">Mô tả</th><th scope="col">Tác giả</th><th scope="col">Nguồn</th><th scope="col">Giấy phép</th></tr></thead><tbody>{rows}</tbody></table></div>
+<p class="note" style="margin-top:16px">Bản tranh minh họa SVG cũ vẫn được giữ cho bản <a href="homestay-v1/index.html">homestay v1</a>. Danh sách đầy đủ dạng văn bản: <a href="assets/photos/CREDITS.md">CREDITS.md</a>.</p></div></section>''',None)
 
 # --- 404
 pages['404.html']=('Không tìm thấy trang','Trang không tồn tại.',f'<section class="sec center"><div class="wrap"><p class="big404" aria-hidden="true">404</p><h1>Không tìm thấy trang</h1><p class="muted">Đường dẫn có thể đã thay đổi. Hãy quay lại trang chủ hoặc xem các loại phòng.</p><a class="btn primary" href="index.html">Về trang chủ</a> <a class="btn" href="phong/index.html">Xem phòng</a></div></section>',None)

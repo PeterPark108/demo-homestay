@@ -8,8 +8,9 @@ class Q(http.server.SimpleHTTPRequestHandler):
 H=functools.partial(Q,directory=ROOT)
 srv=http.server.ThreadingHTTPServer(('127.0.0.1',8765),H);threading.Thread(target=srv.serve_forever,daemon=True).start()
 B='http://127.0.0.1:8765/'
-PAGES=[('trang-chu','index.html'),('loai-phong','phong/index.html'),('chi-tiet-phong','phong/villa-ho-boi-eo-gio.html'),('tien-ich','tien-ich.html'),('thu-vien-anh','thu-vien-anh.html'),('uu-dai','uu-dai.html'),('dat-phong','dat-phong.html?room=r1'),('lien-he','lien-he.html'),('danh-gia','danh-gia.html'),('faq','faq.html'),('chinh-sach','chinh-sach.html'),('404','404.html'),('homestay-v1','homestay-v1/index.html')]
+PAGES=[('trang-chu','index.html'),('loai-phong','phong/index.html'),('chi-tiet-phong','phong/villa-ho-boi-eo-gio.html'),('tien-ich','tien-ich.html'),('thu-vien-anh','thu-vien-anh.html'),('uu-dai','uu-dai.html'),('dat-phong','dat-phong.html?room=r1'),('lien-he','lien-he.html'),('danh-gia','danh-gia.html'),('faq','faq.html'),('chinh-sach','chinh-sach.html'),('nguon-anh','nguon-anh.html'),('404','404.html'),('homestay-v1','homestay-v1/index.html')]
 errs=[]
+LOADIMG='''async()=>{document.querySelectorAll('img[loading=lazy]').forEach(i=>i.loading='eager');await Promise.all([...document.images].map(i=>i.complete?0:new Promise(r=>{i.onload=i.onerror=r})));return [...document.images].filter(i=>!i.naturalWidth).map(i=>i.getAttribute('src'))}'''
 with sync_playwright() as p:
     br=p.chromium.launch()
     for dev,w,h in(('desktop',1440,900),('mobile',390,844),('narrow',360,780)):
@@ -25,7 +26,9 @@ with sync_playwright() as p:
                 pg.click(f'#cal [data-d="{pair[0]}"]');pg.click(f'#cal [data-d="{pair[1]}"]')
                 if 'Tạm tính' not in pg.inner_text('#bb-calc'):errs.append(f'{dev}: estimate not shown')
             if name=='faq':pg.click('#faqb0')
-            pg.evaluate('window.scrollTo(0,0)');pg.wait_for_timeout(100);pg.screenshot(path=f'{OUT}/{dev}-{name}.png',full_page=True);pg.close()
+            broken=pg.evaluate(LOADIMG)
+            if broken:errs.append(f'{dev}/{name}: broken images {broken}')
+            pg.evaluate('window.scrollTo(0,document.body.scrollHeight)');pg.wait_for_timeout(600);pg.evaluate('window.scrollTo(0,0)');pg.wait_for_timeout(600);pg.screenshot(path=f'{OUT}/{dev}-{name}.png',full_page=True);pg.close()
         # tương tác
         pg=ctx.new_page();pg.on('pageerror',lambda e:errs.append(f'{dev}/booking: {e}'))
         pg.goto(B+'dat-phong.html');pg.click('#bookForm button[type=submit]')
@@ -38,7 +41,7 @@ with sync_playwright() as p:
         if dev=='mobile':
             pg.goto(B+'index.html');pg.click('#menuBtn');pg.screenshot(path=f'{OUT}/mobile-menu.png')
             if not pg.is_visible('#nav'):errs.append('mobile menu not opening')
-        pg.goto(B+'thu-vien-anh.html');pg.click('[data-lb] >> nth=0');pg.keyboard.press('ArrowRight');pg.wait_for_timeout(200);pg.screenshot(path=f'{OUT}/{dev}-lightbox.png')
+        pg.goto(B+'thu-vien-anh.html');pg.click('[data-lb] >> nth=0');pg.keyboard.press('ArrowRight');pg.wait_for_timeout(800);pg.screenshot(path=f'{OUT}/{dev}-lightbox.png')
         pg.keyboard.press('Escape')
         if pg.evaluate('document.getElementById("lb").open'):errs.append(f'{dev}: lightbox esc')
         ctx.close()
